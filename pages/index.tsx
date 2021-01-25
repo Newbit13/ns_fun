@@ -14,7 +14,7 @@ export default function Home({gamelist}) {
         </Head>
         <main className={styles.main}>
           {
-            gamelist.map((game)=>{
+            gamelist.length > 0 && gamelist.map((game)=>{
               return (
                 <div className={styles.card_box} key={game.id}>
                   <Cart />
@@ -29,8 +29,13 @@ export default function Home({gamelist}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('https://service-75oyrwi6-1256879764.gz.apigw.tencentcs.com/release/gamelist')
-  const gamelist = await res.json();
+  const res = await fetch('http://localhost:3000/product/list')
+  let jsonData = await res.json();
+  let gamelist = [];
+
+  if(jsonData.code == 200){
+    gamelist = jsonData.data
+  }
   
   return {
     props: {

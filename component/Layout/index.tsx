@@ -4,7 +4,7 @@ function Layout({children}){
     return (
         <div>
             <div className={styles.head}>
-                <img src="/switch.svg" alt="" width="30"/>
+                <img src="/switch.svg" alt="" width="30" style={{marginRight:'10px'}}/>
                 <div className={styles.title}>唯秋</div>
             </div>
             <div className={styles.container}>{children}</div>
