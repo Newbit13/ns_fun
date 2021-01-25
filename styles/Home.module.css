@@ -1,0 +1,12 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.card_box{
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
